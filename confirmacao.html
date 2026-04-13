@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra Confirmada - Loja do Pedro</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #1a0033, #330022);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .confirmation-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 50px 35px;
+      max-width: 480px;
+      text-align: center;
+      border: 2px solid #ff1493;
+      box-shadow: 0 20px 50px rgba(255, 20, 147, 0.4);
+      animation: fadeIn 1s ease;
+    }
+
+    .success-icon {
+      font-size: 7rem;
+      margin-bottom: 20px;
+      animation: popIn 0.8s ease;
+    }
+
+    .title {
+      font-size: 2.6rem;
+      color: #00ff9d;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 1.35rem;
+      opacity: 0.95;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .details {
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 30px 0;
+      text-align: left;
+    }
+
+    .detail-item {
+      margin: 14px 0;
+      font-size: 1.15rem;
+    }
+
+    .heart {
+      color: #ff1493;
+      font-size: 1.4rem;
+    }
+
+    .final-message {
+      font-size: 1.5rem;
+      margin: 35px 0 20px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      padding: 16px 40px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #ff1493, #ff69b4);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.4); }
+      70% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="confirmation-card">
+    <div class="success-icon">🎉</div>
+    <h1 class="title">Compra Aprovada!</h1>
+    <p class="subtitle">Parabéns Maria Clara! Seu pacote foi ativado com sucesso.</p>
+
+    <div class="details">
+      <div class="detail-item">📦 <strong>Pacote adquirido:</strong> Ficante Premium + Exclusividade Total</div>
+      <div class="detail-item">✅ 2 beijos iniciais foram debitados</div>
+      <div class="detail-item">✅ Acesso liberado imediatamente</div>
+      <div class="detail-item">🔑 <strong>Login:</strong> Maria Clara</div>
+      <div class="detail-item">🔑 <strong>Senha:</strong> Do meu coração <span class="heart">❤️</span></div>
+    </div>
+
+    <p class="final-message">
+      Pode utilizar quando quiser...<br>
+      Tô esperando sua primeira ordem 😏
+    </p>
+
+    <button class="btn" onclick="voltar()">
+      VOLTAR PARA A LOJA
+    </button>
+  </div>
+
+  <script>
+    function voltar() {
+      // Aqui você pode redirecionar para outra página ou apenas recarregar
+      alert("Obrigado por fechar a promoção! ❤️\n\nAgora é só aproveitar...");
+      // Se quiser voltar para a página principal, descomente a linha abaixo:
+      // window.location.reload();
+    }
+
+    // Animação extra ao carregar
+    setTimeout(() => {
+      document.querySelector('.confirmation-card').style.animation = 'fadeIn 1.2s ease';
+    }, 300);
+  </script>
+</body>
+</html>

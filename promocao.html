@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROMOÇÃO RELÂMPAGO NO SEU FEED 🔥</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #1a0033, #330022);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      min-height: 100vh;
+      padding: 20px 15px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ff1493;
+      color: white;
+      padding: 8px 22px;
+      border-radius: 30px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      box-shadow: 0 0 20px #ff1493;
+    }
+
+    h1 {
+      font-size: 2.45rem;
+      margin: 12px 0 8px;
+      text-shadow: 0 0 25px #ff1493;
+    }
+
+    .product-card {
+      background: rgba(255,255,255,0.09);
+      border-radius: 22px;
+      padding: 28px 24px;
+      max-width: 540px;
+      margin: 0 auto 30px;
+      border: 2px solid #ff1493;
+      box-shadow: 0 15px 35px rgba(255, 20, 147, 0.35);
+    }
+
+    .product-title {
+      font-size: 1.85rem;
+      color: #ff69b4;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .price {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin: 18px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+      font-size: 1.35rem;
+    }
+
+    .offer {
+      background: #ff1493;
+      padding: 14px;
+      border-radius: 14px;
+      text-align: center;
+      margin: 22px 0;
+      font-weight: 600;
+    }
+
+    .benefits {
+      background: rgba(255,255,255,0.07);
+      padding: 20px;
+      border-radius: 16px;
+      margin: 25px 0;
+    }
+
+    .benefit-item {
+      margin: 13px 0;
+      font-size: 1.2rem;
+    }
+
+    .countdown {
+      text-align: center;
+      font-size: 1.45rem;
+      margin: 30px 0 20px;
+      padding: 15px;
+      background: rgba(255, 204, 0, 0.15);
+      border-radius: 12px;
+      border: 1px solid #ffcc00;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 19px;
+      font-size: 1.65rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #ff1493, #ff69b4);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5);
+      transition: all 0.3s;
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">🔥 PROMOÇÃO RELÂMPAGO NO SEU FEED!</div>
+    <h1>Loja do Pedro</h1>
+  </div>
+
+  <div class="product-card">
+    <div class="product-title">Cansada de produtos que não entregam o que prometem?<br>Conheça esse exemplar aqui: atençioso, boa conversa e disponível pra pronta entrega. 😉</div>
+    <p style="opacity:0.9;">Modelo Premium com exclusividade total</p>
+
+    <div class="price">
+      De: <span class="old-price">R$ 999,99</span><br>
+      Por: <strong>2 beijos iniciais + você já ser minha</strong>
+    </div>
+
+    <div class="offer">
+      📦 Frete grátis (eu vou até você)<br>
+      🔒 Exclusividade garantida — sem concorrência
+    </div>
+
+    <div class="benefits">
+      <div class="benefit-item">✅ Conversa boa e atenção diária</div>
+      <div class="benefit-item">✅ Exclusividade total (ninguém mais)</div>
+      <div class="benefit-item">✅ Plano fidelidade: 20 beijos/mês (negociável e renovável)</div>
+    </div>
+
+    <div class="countdown">
+      <strong>Oferta expira em:</strong><br>
+      <span id="countdown" style="font-size:1.7rem; font-weight:700; color:#ffcc00;"></span>
+    </div>
+
+    <!-- Botão alterado para ir direto para a página de confirmação -->
+    <button class="btn" onclick="irParaConfirmacao()">
+      QUERO FECHAR ESSA PROMOÇÃO AGORA 🔥
+    </button>
+  </div>
+
+  <p style="text-align:center; opacity:0.85; margin-top:15px;">
+    Maria Clara Lopes, o que acha?<br>
+    Vamos fechar esse negócio ou vai deixar passar? 😈
+  </p>
+
+  <script>
+    // Contagem regressiva
+    function startCountdown() {
+      const countdownEl = document.getElementById('countdown');
+      let endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+
+      setInterval(() => {
+        let distance = endTime - new Date().getTime();
+        if (distance < 0) {
+          countdownEl.innerHTML = "Promoção expirada 😭";
+          return;
+        }
+        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        countdownEl.innerHTML = `${hours.toString().padStart(2,'0')}h ${minutes.toString().padStart(2,'0')}m ${seconds.toString().padStart(2,'0')}s`;
+      }, 1000);
+    }
+
+    // Função que redireciona para a página de confirmação
+    function irParaConfirmacao() {
+      window.location.href = "confirmacao.html";
+    }
+
+    // Inicia contagem
+    startCountdown();
+  </script>
+</body>
+</html>
